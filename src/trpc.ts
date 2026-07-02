@@ -1,7 +1,7 @@
 import { initTRPC } from '@trpc/server';
 import { z } from 'zod';
 
-import pkg from '../package.json';
+import pkg from '../package.json' with { type: 'json' };
 
 import authController from './controller/auth.js';
 import profileController from './controller/profile.js';
