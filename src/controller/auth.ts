@@ -3,22 +3,22 @@ import { createMsal } from '../utils/msal.js'
 
 export default class authController {
 
-    async startMsalAuth(forceRegionIp?: string) {
+    async startMsalAuth(forceRegionIp?: string): Promise<unknown> {
         const msal = createMsal(undefined, forceRegionIp)
         return await msal.doDeviceCodeAuth()
     }
 
-    async verifyDeviceCode(devicecode: string, timeout?: number, forceRegionIp?: string) {
+    async verifyDeviceCode(devicecode: string, timeout?: number, forceRegionIp?: string): Promise<unknown> {
         const msal = createMsal(undefined, forceRegionIp)
         return await msal.doPollForDeviceCodeAuth(devicecode, timeout)
     }
 
-    async refreshUserToken(token: IUserToken, forceRegionIp?: string) {
+    async refreshUserToken(token: IUserToken, forceRegionIp?: string): Promise<unknown> {
         const msal = createMsal(token, forceRegionIp)
         return await msal.refreshUserToken()
     }
 
-    async getStreamingTokens(token: IUserToken, forceRegionIp?: string) {
+    async getStreamingTokens(token: IUserToken, forceRegionIp?: string): Promise<{ xHomeToken: unknown; xCloudToken: unknown }> {
         const msal = createMsal(token, forceRegionIp)
 
         const gssvToken = await msal.getGssvToken()
@@ -44,7 +44,7 @@ export default class authController {
         return { xHomeToken: _xhomeToken, xCloudToken: _xcloudToken }
     }
 
-    async getWebToken(token: IUserToken, forceRegionIp?: string) {
+    async getWebToken(token: IUserToken, forceRegionIp?: string): Promise<unknown> {
         const msal = createMsal(token, forceRegionIp)
         return await msal.getWebToken()
     }

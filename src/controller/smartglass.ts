@@ -4,7 +4,7 @@ import { TRPCError } from '@trpc/server'
 
 export default class smartglassController {
 
-    async getConsolesList(token:WebToken) {
+    async getConsolesList(token:WebToken): Promise<unknown> {
         if(token.uhs === '' || token.token === '') {
             throw new TRPCError({
                 code: 'UNAUTHORIZED',
@@ -20,7 +20,7 @@ export default class smartglassController {
         return await apiClient.providers['smartglass'].getConsolesList()
     }
 
-    async powerOn(token: WebToken, consoleId: string) {
+    async powerOn(token: WebToken, consoleId: string): Promise<unknown> {
         if(token.uhs === '' || token.token === '') {
             throw new TRPCError({
                 code: 'UNAUTHORIZED',

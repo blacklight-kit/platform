@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@blacklight/player':
-        specifier: github:blacklight-kit/player#v1.0.1
-        version: git+https://github.com/blacklight-kit/player.git#f9f1e6f80eeceda962af1aa7313f5764faaa8479(react@18.3.1)
+        specifier: github:blacklight-kit/player#v1.0.2
+        version: https://codeload.github.com/blacklight-kit/player/tar.gz/5fd8206d019c967b7c35f690603c477d08f1ee77(react@18.3.1)
       '@cloudflare/workers-types':
         specifier: ^4.20260518.1
         version: 4.20260702.1
@@ -69,9 +69,9 @@ importers:
 
 packages:
 
-  '@blacklight/player@git+https://github.com/blacklight-kit/player.git#f9f1e6f80eeceda962af1aa7313f5764faaa8479':
-    resolution: {commit: f9f1e6f80eeceda962af1aa7313f5764faaa8479, repo: https://github.com/blacklight-kit/player.git, type: git}
-    version: 1.0.1
+  '@blacklight/player@https://codeload.github.com/blacklight-kit/player/tar.gz/5fd8206d019c967b7c35f690603c477d08f1ee77':
+    resolution: {tarball: https://codeload.github.com/blacklight-kit/player/tar.gz/5fd8206d019c967b7c35f690603c477d08f1ee77}
+    version: 1.0.2
     peerDependencies:
       react: ^18.0.0
 
@@ -1347,7 +1347,7 @@ packages:
 
 snapshots:
 
-  '@blacklight/player@git+https://github.com/blacklight-kit/player.git#f9f1e6f80eeceda962af1aa7313f5764faaa8479(react@18.3.1)':
+  '@blacklight/player@https://codeload.github.com/blacklight-kit/player/tar.gz/5fd8206d019c967b7c35f690603c477d08f1ee77(react@18.3.1)':
     dependencies:
       react: 18.3.1
       uuid: 13.0.2

@@ -22,7 +22,7 @@ import {
 const t = initTRPC.create();
 export const router = t.router;
 export const publicProcedure = t.procedure;
-export const createCallerFactory = t.createCallerFactory;
+export const createCallerFactory: typeof t.createCallerFactory = t.createCallerFactory;
 
 const auth = new authController();
 const profile = new profileController();
@@ -77,7 +77,7 @@ const xCloudStreamConfig = z.object({
     resolution: z.union([z.literal(720), z.literal(1080)])
 })
 
-export const appRouter = router({
+export const appRouter: ReturnType<typeof router> = router({
     ping: publicProcedure.query(() => 'pong'),
     version: publicProcedure.query(() => pkg.version),
     echo: publicProcedure.input(z.string()).query(({ input }) => `echo: ${input}`),

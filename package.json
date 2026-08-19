@@ -1,6 +1,6 @@
 {
   "name": "@blacklight/platform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "repository": {
@@ -29,7 +29,7 @@
     "dev": "wrangler dev --local"
   },
   "dependencies": {
-    "@blacklight/player": "github:blacklight-kit/player#v1.0.1",
+    "@blacklight/player": "github:blacklight-kit/player#v1.0.2",
     "@cloudflare/workers-types": "^4.20260518.1",
     "@trpc/server": "^11.11.0",
     "wrangler": "^4.92.0",
