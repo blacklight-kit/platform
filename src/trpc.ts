@@ -22,7 +22,8 @@ import {
 const t = initTRPC.create();
 export const router = t.router;
 export const publicProcedure = t.procedure;
-export const createCallerFactory = t.createCallerFactory;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const createCallerFactory: any = t.createCallerFactory;
 
 const auth = new authController();
 const profile = new profileController();
@@ -77,7 +78,8 @@ const xCloudStreamConfig = z.object({
     resolution: z.union([z.literal(720), z.literal(1080)])
 })
 
-export const appRouter = router({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const appRouter: any = router({
     ping: publicProcedure.query(() => 'pong'),
     version: publicProcedure.query(() => pkg.version),
     echo: publicProcedure.input(z.string()).query(({ input }) => `echo: ${input}`),
