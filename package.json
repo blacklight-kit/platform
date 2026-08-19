@@ -1,6 +1,6 @@
 {
   "name": "@blacklight/platform",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "repository": {
@@ -8,10 +8,13 @@
     "url": "git+https://github.com/blacklight-kit/platform.git"
   },
   "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
-      "import": "./dist/src/index.js"
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
     }
   },
   "files": [
