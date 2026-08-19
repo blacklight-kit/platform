@@ -1,0 +1,1 @@
+{"version":3,"file":"proxystore.d.ts","sourceRoot":"","sources":["../../../src/utils/proxystore.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,UAAU,CAAA;AAErC,OAAO,EAAE,UAAU,EAAE,MAAM,uCAAuC,CAAA;AAClE,MAAM,CAAC,OAAO,OAAO,UAAW,SAAQ,UAAU;gBAElC,KAAK,CAAC,EAAE,UAAU;IAO9B,IAAI;IAQJ,IAAI;IAWJ,KAAK;IAQL,SAAS;CAKZ"}

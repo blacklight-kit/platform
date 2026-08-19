@@ -1,0 +1,1 @@
+{"version":3,"file":"titlemanager.d.ts","sourceRoot":"","sources":["../../../src/lib/titlemanager.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,OAAO,YAAY;IAE7B,OAAO,CAAC,MAAM,CAAe;IAC7B,OAAO,CAAC,WAAW,CAAa;IAChC,OAAO,CAAC,OAAO,CAA6B;IAEtC,UAAU,CAAC,KAAK,EAAC,MAAM,EAAE;IAKzB,YAAY,CAAC,KAAK,EAAC,MAAM;IAsCzB,qBAAqB,CAAC,KAAK,EAAC,MAAM,EAAE,EAAE,KAAK,EAAC,MAAM;CAQ3D"}

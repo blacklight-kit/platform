@@ -1,5 +1,4 @@
 node_modules/
-dist/
 .wrangler/
 tsconfig.tsbuildinfo
 .env
@@ -7,4 +6,4 @@ tsconfig.tsbuildinfo
 !.env.example
 .idea/
 .DS_Store
-*.log
+*.logdist/tsconfig.tsbuildinfo

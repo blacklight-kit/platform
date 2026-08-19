@@ -1,6 +1,6 @@
 {
   "name": "@blacklight/platform",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "repository": {
@@ -23,7 +23,6 @@
   "scripts": {
     "build": "pnpm run clean && tsc --build",
     "clean": "rm -rf dist/",
-    "prepare": "pnpm run build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test:unit": "mocha tests/**/*.ts",

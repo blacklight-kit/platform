@@ -1,0 +1,51 @@
+import Http from './http.js';
+export default class TitleManager {
+    _queue = [];
+    _httpClient = new Http();
+    _titles = new Map();
+    async queueItems(items) {
+        console.log('Queueing items:', items);
+        this._queue = [...this._queue, ...items];
+    }
+    async processQueue(token) {
+        console.log('Processing Queue:', this._queue);
+        try {
+            const itemsToProcess = this._queue.splice(0, 20);
+            for (const item of itemsToProcess) {
+                if (this._titles.has(item)) {
+                    console.log('Item already in titles:', item);
+                    const index = itemsToProcess.indexOf(item);
+                    if (index > -1) {
+                        itemsToProcess.splice(index, 1);
+                    }
+                }
+            }
+            if (itemsToProcess.length > 0) {
+                const result = await this._httpClient.postRequest('catalog.gamepass.com', `/v3/products?hydration=RemoteHighSapphire0&market=US&language=en-us`, {
+                    'Authorization': `Bearer ${token}`,
+                    'ms-cv': '0.0',
+                    'calling-app-name': 'Blacklight',
+                    'calling-app-version': '3.0.0',
+                }, {
+                    Products: itemsToProcess,
+                });
+                for (const product in result.data.Products) {
+                    console.log(result.data.Products[product]);
+                    this._titles.set(result.data.Products[product].StoreId, result.data.Products[product]);
+                }
+                return;
+            }
+        }
+        catch (error) {
+            console.error('Error processing queue:', error);
+            return;
+        }
+    }
+    async processQueueAndReturn(items, token) {
+        while (this._queue.length > 0) {
+            await this.processQueue(token);
+        }
+        console.log('Returning items:', this._titles, items);
+        return Array.from(this._titles.values());
+    }
+}
