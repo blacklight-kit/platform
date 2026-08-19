@@ -3,22 +3,26 @@ import { createMsal } from '../utils/msal.js'
 
 export default class authController {
 
-    async startMsalAuth(forceRegionIp?: string): Promise<unknown> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async startMsalAuth(forceRegionIp?: string): Promise<any> {
         const msal = createMsal(undefined, forceRegionIp)
         return await msal.doDeviceCodeAuth()
     }
 
-    async verifyDeviceCode(devicecode: string, timeout?: number, forceRegionIp?: string): Promise<unknown> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async verifyDeviceCode(devicecode: string, timeout?: number, forceRegionIp?: string): Promise<any> {
         const msal = createMsal(undefined, forceRegionIp)
         return await msal.doPollForDeviceCodeAuth(devicecode, timeout)
     }
 
-    async refreshUserToken(token: IUserToken, forceRegionIp?: string): Promise<unknown> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async refreshUserToken(token: IUserToken, forceRegionIp?: string): Promise<any> {
         const msal = createMsal(token, forceRegionIp)
         return await msal.refreshUserToken()
     }
 
-    async getStreamingTokens(token: IUserToken, forceRegionIp?: string): Promise<{ xHomeToken: unknown; xCloudToken: unknown }> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async getStreamingTokens(token: IUserToken, forceRegionIp?: string): Promise<{ xHomeToken: any; xCloudToken: any }> {
         const msal = createMsal(token, forceRegionIp)
 
         const gssvToken = await msal.getGssvToken()
@@ -44,7 +48,8 @@ export default class authController {
         return { xHomeToken: _xhomeToken, xCloudToken: _xcloudToken }
     }
 
-    async getWebToken(token: IUserToken, forceRegionIp?: string): Promise<unknown> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    async getWebToken(token: IUserToken, forceRegionIp?: string): Promise<any> {
         const msal = createMsal(token, forceRegionIp)
         return await msal.getWebToken()
     }
